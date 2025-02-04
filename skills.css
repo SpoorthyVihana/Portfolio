@@ -1,0 +1,382 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    }
+    
+    body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #999340;
+    color: #fff;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+    background-color: #ECEBDE;
+    width: 270px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    }
+    
+    .logo {
+    font-size: 24px;
+    color: #ff5e57;
+    margin-bottom: 50px;
+    text-align: center;
+    }
+    
+    .logo span {
+    font-weight: bold;
+    }
+    
+    .sidebar nav ul {
+    list-style: none;
+    }
+    
+    .sidebar nav ul li {
+    margin: 20px 0;
+    }
+    
+    .sidebar nav ul li a {
+    color: #aaa;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    }
+    
+    .sidebar nav ul li a i {
+    margin-right: 10px;
+    }
+    
+    .sidebar nav ul li a:hover {
+    color: #57ff6d;
+    }
+    
+    /* Hide all sections by default */
+    section {
+    display: none;
+    }
+    
+    /* Show active section */
+    section.active, .home-section {
+    display: block;
+    }
+    
+    /* Content styling */
+    .content {
+    margin: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    }
+    
+    /* Home Section */
+    .home-section {
+    margin-left: 250px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .home-section .content {
+    max-width: 600px;
+    }
+    
+    .home-section .content h1 {
+    font-size: 48px;
+    }
+    
+    .home-section .content .name {
+    color: #ff5e57;
+    }
+    
+    .home-section .content h2 {
+    font-size: 36px;
+    margin: 10px 0;
+    }
+    
+    .home-section .content .highlight {
+    color: #ff5e57;
+    }
+    
+    .home-section .content p {
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.6;
+    }
+    
+    .home-section.active {
+    display: flex; /* Ensures the layout remains intact when active */
+    }
+    
+    .social-media a svg {
+    margin: 1% 12px;
+    border: 2px solid rgb(47, 49, 189);
+    box-shadow: 0 0 40px rgb(47, 49, 189);
+    border-radius: 50%;
+    background: rgb(4, 4, 9);
+    animation: slideRight 2s ease forwards;
+    }
+    
+    /* About Section */
+    .about-section {
+    padding: 50px 20px;
+    margin-left: 270px;
+    background: linear-gradient(155deg, #090989, #C1BAA1, #D7D3BF);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+    }
+    
+    /* Animated Gradient Background */
+    @keyframes gradient-animation {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+    }
+    
+    .about-section {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+    }
+    
+    /* Text Appearance Animation */
+    .about-section .content p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .about-section .content h1 {
+   font-size: 48px;
+    }
+    
+    @keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    .about-section .content li:hover {
+    color: #ffe259;
+    text-shadow: 0 0 10px rgba(255, 226, 89, 0.8);
+    transition: all 0.3s ease-in-out;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .about-section {
+    margin-left: 0;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    }
+    
+    .about-section .content {
+    max-width: 100%;
+    }
+    }
+    
+    /* Skills Section */
+    .skills-section {
+    margin-left: 270px; /* Keeps alignment consistent with sidebar */
+    width: calc(100% - 270px); /* Makes the section span the full remaining width */
+    padding: 50px 20px; /* Retain padding for spacing */
+    background: linear-gradient(155deg, #0d6efd, #6610f2, #6f42c1); /* Optional gradient for visual appeal */
+    color: #fff; /* Ensure text contrast */
+    }
+    
+    /* Projects Section */
+    .projects-section {
+    padding: 50px 20px;
+    margin-left: 270px;
+    background: linear-gradient(155deg, #0b0c60, #2a8fbf, #d9302b); /* Adjust gradient */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden; /* Prevent elements from spilling out */
+    position: relative;
+    }
+    
+    /* Rest of the CSS remains unchanged */
+    
+    /* Animated Gradient Background */
+    .projects-section {
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+    }
+    
+    @keyframes gradient-animation {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+    }
+    
+    /* Text Appearance Animation */
+    .projects-section .content p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    }
+    
+    .projects-section .content h1 {
+    font-size: 48px;
+    }
+    
+    @keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    /* Hover Animation for Text */
+    .projects-section .content p:hover {
+    color: #ffe259;
+    text-shadow: 0 0 10px rgba(255, 226, 89, 0.8);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    }
+    
+    /* Floating Particles Animation */
+    .projects-section .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+    }
+    
+    @keyframes float {
+    0% {
+    transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+    transform: translateY(-50px) translateX(50px) scale(1.2);
+    }
+    100% {
+    transform: translateY(0) translateX(0) scale(1);
+    }
+    }
+    
+    /* Particle Generation for Projects Section */
+    .projects-section .particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-duration: 4s;
+    }
+    
+    .projects-section .particle:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-duration: 5s;
+    }
+    
+    .projects-section .particle:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    animation-duration: 6s;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .projects-section {
+    margin-left: 0;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    }
+    
+    .projects-section .content {
+    max-width: 100%;
+    }
+    }
+    
+    /* Custom Bullet Style (Circular effect) for Projects List */
+    ul.projects-list {
+    list-style: none;
+    padding-left: 0;
+    }
+    
+    ul.projects-list li {
+    position: relative;
+    padding-left: 35px; /* Adjust left padding for custom bullets */
+    margin-bottom: 20px;
+    font-size: 18px;
+    }
+    
+    ul.projects-list li::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 12px; /* Size of the circular bullet */
+    height: 12px;
+    background-color: #ce6312; /* Bullet color */
+    border-radius: 50%; /* Circle shape */
+    animation: bullet-pulse 1.5s ease-out infinite; /* Pulsing animation */
+    }
+    
+    /* Pulsing Animation for Bullet */
+    @keyframes bullet-pulse {
+    0% {
+    transform: scale(1);
+    opacity: 0.8;
+    }
+    50% {
+    transform: scale(1.3);
+    opacity: 1;
+    }
+    100% {
+    transform: scale(1);
+    opacity: 0.8;
+    }
+    }
+    /* Hover effect for project item */
+    .project-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    }
+    
